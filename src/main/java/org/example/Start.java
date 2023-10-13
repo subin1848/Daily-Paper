@@ -2,9 +2,11 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 @SuppressWarnings("unused")
-public class LoginStart extends JFrame
+public class Start extends JFrame
 {
     JPanel DP;
     JLabel DP_img;
@@ -13,9 +15,9 @@ public class LoginStart extends JFrame
     ImageIcon S1img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 31.png");
     ImageIcon S2img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 32.png");
 
-    public LoginStart()
+    public Start()
     {
-        setTitle("Daily-Paper 로그인 화면");
+        setTitle("Daily-Paper 시작 화면");
         setLocation(200,200);
         setSize(1200,700);
         setVisible(true);
@@ -48,10 +50,19 @@ public class LoginStart extends JFrame
         add(DP);
         add(Sb1, BorderLayout.SOUTH);   //버튼 위치 설정
 
+        Sb1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new Login();
+                setVisible(false);
+            }
+        });
     }
+
+
     public static void main(String[] args)
     {
-        new LoginStart();
+        new Start();
     }
 }
 
