@@ -8,12 +8,12 @@ import java.awt.event.ActionListener;
 @SuppressWarnings("unused")
 public class Start extends JFrame
 {
-    JPanel DP;
-    JLabel DP_img;
-    JButton Sb1,Sb2;
+    JPanel dP;
+    JLabel dP_img;
+    JButton sB1,sB2;
     ImageIcon img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\하루한장 배경.png");
-    ImageIcon S1img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 31.png");
-    ImageIcon S2img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 32.png");
+    ImageIcon s1img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 31.png");
+    ImageIcon s2img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 32.png");
 
     public Start()
     {
@@ -24,33 +24,29 @@ public class Start extends JFrame
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        DP = new JPanel();
-        DP_img = new JLabel(img,
+        dP = new JPanel();
+        dP_img = new JLabel(img,
                 JLabel.CENTER);
-        DP_img.setVerticalTextPosition(JLabel.CENTER);
-        DP_img.setHorizontalTextPosition(JLabel.RIGHT);
-        DP.setBackground(Color.white);  //panel 배경색 흰색으로 변경
-        DP.add(DP_img); //DP 패널안에 DP_img 삽입
+        dP_img.setVerticalTextPosition(JLabel.CENTER);
+        dP_img.setHorizontalTextPosition(JLabel.RIGHT);
+        dP.setBackground(Color.white);  //panel 배경색 흰색으로 변경
+        dP.add(dP_img); //DP 패널안에 DP_img 삽입
 
-        Sb1 = new JButton(S1img);
-        Sb2 = new JButton();
-        Sb1.setRolloverIcon(S2img);     //마우스 갖다 대면 이미지 변경
-        Sb1.setBorderPainted(false);    //테두리 외각선 없애기
-        //Sb1.setContentAreaFilled(false);//내용 영역 없애기
-        Sb1.setFocusPainted(false); //focus 되었을 때 테두리 없애기
-        Sb1.setBounds(393, 530, 414, 88);
-        Sb1.setContentAreaFilled(false); // 내용 영역만 클릭 가능하도록 설정
-        Sb1.setOpaque(true); // 배경색 설정을 유효하게 만듬
-        Sb1.setBackground(Color.white); // 버튼의 배경색을 흰색으로 설정
+        sB1 = new JButton(s1img);
+        sB2 = new JButton();
+        sB1.setRolloverIcon(s2img);     //마우스 갖다 대면 이미지 변경
+        sB1.setBorderPainted(false);    //테두리 외각선 없애기
+        sB1.setFocusPainted(false); //focus 되었을 때 테두리 없애기
+        sB1.setBounds(393, 530, 414, 88);
+        sB1.setContentAreaFilled(false); // 내용 영역만 클릭 가능하도록 설정
+        sB1.setOpaque(true); // 배경색 설정을 유효하게 만듬
+        sB1.setBackground(Color.white); // 버튼의 배경색을 흰색으로 설정
 
-//        Sb1.setBackground(new Color(255,255,255));  //버튼 배경 흰색으로 설정
-//        Sb1.setContentAreaFilled(false); // 내용 영역만 클릭 가능하도록 설정
+        dP.add(sB1);
+        add(dP);
+        add(sB1, BorderLayout.SOUTH);   //버튼 위치 설정
 
-        DP.add(Sb1);
-        add(DP);
-        add(Sb1, BorderLayout.SOUTH);   //버튼 위치 설정
-
-        Sb1.addActionListener(new ActionListener() {
+        sB1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 new Login();
