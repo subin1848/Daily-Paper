@@ -7,7 +7,8 @@ import java.awt.*;
 public class Login extends JFrame
 {
     JPanel panel1;
-//    JPanel panel2;
+    JPanel panel2;
+    JPanel panel3;
     JLabel lP;
     JButton iD, pW, lG, aC;
     ImageIcon lP_img = new ImageIcon("C:/MSG 13기 java 프로젝트/dailypaper/image/하루한장 배경.png");
@@ -38,6 +39,7 @@ public class Login extends JFrame
         add(lP, BorderLayout.WEST);
         setVisible(true);
         //아이디 버튼 만들기
+        panel2 = new JPanel();
         iD = new JButton();
         iD.setIcon(iD_img);
         iD.setBorderPainted(false);
@@ -48,6 +50,7 @@ public class Login extends JFrame
         iD.setBackground(Color.white);
 
         //비밀번호 버튼 만들기
+        panel3 = new JPanel();
         pW = new JButton();
         pW.setIcon(pW_img);
         pW.setBorderPainted(false);
@@ -69,11 +72,11 @@ public class Login extends JFrame
         lG.setBackground(Color.white);
 
         add(panel1);
-        panel1.add(iD);
+        panel2.add(iD);
         add(iD);
-        panel1.add(pW);
+        panel3.add(pW);
         add(pW);
-        panel1.add(lG);
+    //    panel1.add(lG);
         add(lG);
         setVisible(true);
     }
