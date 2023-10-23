@@ -40,7 +40,6 @@ public class Start extends JFrame
         sB1.setContentAreaFilled(false); // 내용 영역만 클릭 가능하도록 설정
         sB1.setOpaque(true); // 배경색 설정을 유효하게 만듬
         sB1.setBackground(Color.white); // 버튼의 배경색을 흰색으로 설정
-
         dP.add(sB1);
         add(dP);
         add(sB1, BorderLayout.SOUTH);   //버튼 위치 설정
