@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Home1 {
     public static void main(String args[]) {
-        JFrame frame = new JFrame("Search");
+        JFrame frame = new JFrame("Home");
         frame.setPreferredSize(new Dimension(1200,700));    // 폭과 넓이 적용
         frame.setLocation(180,50);      // 윈도우 창의 나타낼 위치
         frame.setLayout(null);
