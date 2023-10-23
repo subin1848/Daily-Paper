@@ -9,7 +9,7 @@ public class Search {
         frame.setPreferredSize(new Dimension(1200,700));    // 폭과 넓이 적용
         frame.setLocation(180,50);      // 윈도우 창의 나타낼 위치
         frame.setLayout(null);
-        frame.setResizable(false);      // 창 크기 제한
+        //frame.setResizable(false);      // 창 크기 제한
         frame.setVisible(true);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,6 +20,20 @@ public class Search {
         ImageIcon icon2 = new ImageIcon("src/main/resources/static/img/Group 46.png");
         ImageIcon icon3 = new ImageIcon("src/main/resources/static/img/Group 47.png");
 
+        ImageIcon icon4 = new ImageIcon("src/main/resources/static/img/search.png");
+        Image img1 = icon4.getImage();
+        Image changeImg1 = img1.getScaledInstance(15,15, Image.SCALE_SMOOTH);
+        ImageIcon changeIcon1 = new ImageIcon(changeImg1);
+
+        ImageIcon icon5 = new ImageIcon("src/main/resources/static/img/이전.png");
+        Image img2 = icon5.getImage();
+        Image changeImg2 = img2.getScaledInstance(70,70, Image.SCALE_SMOOTH);
+        ImageIcon changeIcon2 = new ImageIcon(changeImg2);
+
+        ImageIcon icon6 = new ImageIcon("src/main/resources/static/img/이후.png");
+        Image img3 = icon6.getImage();
+        Image changeImg3 = img3.getScaledInstance(70,70, Image.SCALE_SMOOTH);
+        ImageIcon changeIcon3 = new ImageIcon(changeImg3);
 
         Color color1 = new Color(0xFFDAB9);
         Color color2 = new Color(0xFFCC99);
@@ -63,7 +77,43 @@ public class Search {
         p3.add(p2);
         p3.add(p1);
 
+
+        JTextField t1 = new JTextField(20);
+
+        JButton b4 = new JButton(icon4);
+        b4.setLayout(null);
+        b4.setBorderPainted(false);     // 테두리 없애기
+        b4.setContentAreaFilled(false);     // 이미지 외 색깔 없애기
+        b4.setFocusPainted(false);
+
+        JPanel p4 = new JPanel();
+        p4.setBounds(425,20,350,40);
+        p4.add(t1);
+        p4.add(b4);
+        p4.setLayout(new BoxLayout(p4, BoxLayout.X_AXIS));
+
+
+        JButton b5 = new JButton(icon5);
+        b5.setBounds(30,200,70,70);
+        b5.setBorderPainted(false);     // 테두리 없애기
+        b5.setContentAreaFilled(false);     // 이미지 외 색깔 없애기
+        b5.setFocusPainted(false);
+
+        JButton b6 = new JButton(icon6);
+        b6.setBounds(800,200,70,70);
+        b6.setBorderPainted(false);     // 테두리 없애기
+        b6.setContentAreaFilled(false);     // 이미지 외 색깔 없애기
+        b6.setFocusPainted(false);
+
+        JPanel p5 = new JPanel();
+        p5.setBounds(150,75,900,460);
+        p5.add(b5);
+        p5.add(b6);
+        p5.setLayout(null);
+
         frame.add(p3);
-        // 밑패널
+        frame.add(p4);
+        frame.add(p5);
+
     }
 }
