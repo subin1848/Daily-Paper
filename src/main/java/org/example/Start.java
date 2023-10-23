@@ -11,9 +11,9 @@ public class Start extends JFrame
     JPanel dP;
     JLabel dP_img;
     JButton sB1,sB2;
-    ImageIcon img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\하루한장 배경.png");
-    ImageIcon s1img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 31.png");
-    ImageIcon s2img = new ImageIcon("C:\\MSG 13기 java 프로젝트\\dailypaper\\image\\Group 32.png");
+    ImageIcon img = new ImageIcon("src/main/resources/static/img/하루한장 배경.png");
+    ImageIcon s1img = new ImageIcon("src/main/resources/static/img/Group 31.png");
+    ImageIcon s2img = new ImageIcon("src/main/resources/static/img/Group 32.png");
 
     public Start()
     {
@@ -25,8 +25,7 @@ public class Start extends JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         dP = new JPanel();
-        dP_img = new JLabel(img,
-                JLabel.CENTER);
+        dP_img = new JLabel(img,JLabel.CENTER);
         dP_img.setVerticalTextPosition(JLabel.CENTER);
         dP_img.setHorizontalTextPosition(JLabel.RIGHT);
         dP.setBackground(Color.white);  //panel 배경색 흰색으로 변경
@@ -41,7 +40,6 @@ public class Start extends JFrame
         sB1.setContentAreaFilled(false); // 내용 영역만 클릭 가능하도록 설정
         sB1.setOpaque(true); // 배경색 설정을 유효하게 만듬
         sB1.setBackground(Color.white); // 버튼의 배경색을 흰색으로 설정
-
         dP.add(sB1);
         add(dP);
         add(sB1, BorderLayout.SOUTH);   //버튼 위치 설정
