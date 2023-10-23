@@ -16,9 +16,10 @@ public class Search {
 
         frame.getContentPane().setBackground(Color.white);     // 창 색상 변경
 
-        ImageIcon icon1 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 45.png");
-        ImageIcon icon2 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 46.png");
-        ImageIcon icon3 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 47.png");
+        ImageIcon icon1 = new ImageIcon("src/main/resources/static/img/Group 45.png");
+        ImageIcon icon2 = new ImageIcon("src/main/resources/static/img/Group 46.png");
+        ImageIcon icon3 = new ImageIcon("src/main/resources/static/img/Group 47.png");
+
 
         Color color1 = new Color(0xFFDAB9);
         Color color2 = new Color(0xFFCC99);
@@ -63,5 +64,6 @@ public class Search {
         p3.add(p1);
 
         frame.add(p3);
+        // 밑패널
     }
 }

@@ -16,11 +16,11 @@ public class Home1 {
 
         frame.getContentPane().setBackground(Color.white);     // 창 색상 변경
 
-        ImageIcon icon1 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 45.png");
-        ImageIcon icon2 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 46.png");
-        ImageIcon icon3 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 47.png");
+        ImageIcon icon1 = new ImageIcon("src/main/resources/static/img/Group 45.png");
+        ImageIcon icon2 = new ImageIcon("src/main/resources/static/img/Group 46.png");
+        ImageIcon icon3 = new ImageIcon("src/main/resources/static/img/Group 47.png");
 
-        ImageIcon icon4 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Page1.png");
+        ImageIcon icon4 = new ImageIcon("src/main/resources/static/img/Page1.png");
         Image img4 = icon4.getImage();
         Image changeImg4 = img4.getScaledInstance(760,535, Image.SCALE_SMOOTH);
         ImageIcon changeIcon4 = new ImageIcon(changeImg4);
@@ -70,7 +70,6 @@ public class Home1 {
 
         JLabel l1 = new JLabel(changeIcon4);
 
-
         JPanel p4 = new JPanel();
         p4.setBackground(Color.white);
         p4.setBounds(220,5,760,545);
@@ -82,11 +81,6 @@ public class Home1 {
 
         //frame.add(p3, BorderLayout.NORTH); // p3를 상단에 배치
         //frame.add(p4, BorderLayout.CENTER); // p4를 중앙에 배치
-
-
-
-
-        //
 
     }
 }
