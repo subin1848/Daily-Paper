@@ -9,9 +9,10 @@ public class Home1 {
         frame.setPreferredSize(new Dimension(1200,700));    // 폭과 넓이 적용
         frame.setLocation(180,50);      // 윈도우 창의 나타낼 위치
         frame.setLayout(null);
-        //frame.setResizable(false);      // 창 크기 제한
-        frame.setVisible(true);
+        frame.setResizable(false);      // 창 크기 제한
         frame.pack();
+
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.getContentPane().setBackground(Color.white);     // 창 색상 변경
@@ -81,6 +82,8 @@ public class Home1 {
 
         //frame.add(p3, BorderLayout.NORTH); // p3를 상단에 배치
         //frame.add(p4, BorderLayout.CENTER); // p4를 중앙에 배치
+
+        frame.setVisible(true);
 
     }
 }

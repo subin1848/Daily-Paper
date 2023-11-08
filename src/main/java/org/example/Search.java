@@ -9,8 +9,8 @@ public class Search {
         frame.setPreferredSize(new Dimension(1200,700));    // 폭과 넓이 적용
         frame.setLocation(180,50);      // 윈도우 창의 나타낼 위치
         frame.setLayout(null);
-        //frame.setResizable(false);      // 창 크기 제한
-        frame.setVisible(true);
+        frame.setResizable(false);      // 창 크기 제한
+
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -105,15 +105,33 @@ public class Search {
         b6.setContentAreaFilled(false);     // 이미지 외 색깔 없애기
         b6.setFocusPainted(false);
 
+        ImageIcon icon7 = new ImageIcon("src/main/resources/static/img/패널.png");
+
+        //JPanel p6 = new JPanel();
+        //ImagePanel pnMiddle = new ImagePanel(new ImageIcon("src/main/resources/static/img/패널.png").getImage()); //이미지 넣기
+        //p6.setBounds(150,40,620,380);
+        //p6.setIcon(icon7);
+        //p6.setBackground(icon7);
+
+
         JPanel p5 = new JPanel();
         p5.setBounds(150,75,900,460);
         p5.add(b5);
         p5.add(b6);
+        //p5.add(p6);
         p5.setLayout(null);
+
+
+
+
+
 
         frame.add(p3);
         frame.add(p4);
         frame.add(p5);
+
+        frame.setVisible(true);
+        //frame.repaint();
 
     }
 }

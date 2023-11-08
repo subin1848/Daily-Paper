@@ -9,7 +9,7 @@ public class Name {
         frame.setPreferredSize(new Dimension(1200,700));    // 폭과 넓이 적용
         frame.setLocation(180,50);      // 윈도우 창의 나타낼 위치
         frame.setLayout(null);
-        frame.setResizable(false);      // 창 크기 제한
+        //frame.setResizable(false);      // 창 크기 제한
         frame.setVisible(true);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,7 +21,7 @@ public class Name {
         p1.setBounds(450, 250, 300, 150);
         p1.setLayout(new BoxLayout(p1, BoxLayout.Y_AXIS));
 
-        ImageIcon icon5 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Frame 5.png");
+        ImageIcon icon5 = new ImageIcon("src/main/resources/static/img/Frame 5.png");
         Image img5 = icon5.getImage();
         Image changeImg5 = img5.getScaledInstance(300,50, Image.SCALE_SMOOTH);
         ImageIcon changeIcon5 = new ImageIcon(changeImg5);
@@ -33,8 +33,8 @@ public class Name {
         p2.setBackground(Color.white);
         p2.add(l1);
 
-        ImageIcon icon1 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 42.png");
-        ImageIcon icon2 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 43.png");
+        ImageIcon icon1 = new ImageIcon("src/main/resources/static/img/Group 42.png");
+        ImageIcon icon2 = new ImageIcon("src/main/resources/static/img/Group 43.png");
 
         Image img1 = icon1.getImage();
         Image changeImg1 = img1.getScaledInstance(80,30, Image.SCALE_SMOOTH);
@@ -55,8 +55,8 @@ public class Name {
         p3.add(new TextField());
         p3.add(b1);
 
-        ImageIcon icon3 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 24.png");
-        ImageIcon icon4 = new ImageIcon("C:/Project/Daily-Paper/src/main/java/org/example/Group 44.png");
+        ImageIcon icon3 = new ImageIcon("src/main/resources/static/img/Group 24.png");
+        ImageIcon icon4 = new ImageIcon("src/main/resources/static/img/Group 44.png");
 
         Image img3 = icon3.getImage();
         Image changeImg3 = img3.getScaledInstance(40,40, Image.SCALE_SMOOTH);
