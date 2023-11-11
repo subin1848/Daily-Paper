@@ -1,28 +1,31 @@
 package org.example;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 @SuppressWarnings("unused")
 public class Login extends JFrame
 {
     JPanel panel1;
     JTextField iD_text;
-//    HintTextField iD_text2;
-//    HintTextField pW_text2;
-    JTextField pW_text;
-    JLabel lP;
-    JButton iD, pW, lG, aC, join;
+    JPasswordField pW_text;
+    JCheckBox pw_check;
+    JLabel lP, login, aC, password;
+    JButton lG, join;
+    //label
     ImageIcon lP_img = new ImageIcon("src/main/resources/static/img/하루한장 배경.png");
-    ImageIcon iD_img = new ImageIcon("src/main/resources/static/img/ID or E-mail.png");
-    ImageIcon iD_img2 = new ImageIcon("src/main/resources/static/img/ID or E-mail2.png");
-    ImageIcon pW_img = new ImageIcon("src/main/resources/static/img/password.png");
-    ImageIcon pw_img2 = new ImageIcon("src/main/resources/static/img/password2.png");
+    ImageIcon login_img = new ImageIcon("src/main/resources/static/img/perm_identity.png");
+    ImageIcon password_img = new ImageIcon("src/main/resources/static/img/lock.png");
+    ImageIcon password_check = new ImageIcon("src/main/resources/static/img/visibility_off (1).png");
+    ImageIcon password_check2 = new ImageIcon("src/main/resources/static/img/visibility (1).png");
+    //button
     ImageIcon lG_img = new ImageIcon("src/main/resources/static/img/Login.png");
     ImageIcon lG_img2 = new ImageIcon("src/main/resources/static/img/Login2.png");
-    ImageIcon aC_img = new ImageIcon("src/main/resources/static/img/Don't you have an account.png");
+//    ImageIcon aC_img = new ImageIcon("src/main/resources/static/img/Don't you have an account.png");
     ImageIcon join_img = new ImageIcon("src/main/resources/static/img/회원가입하기.png");
     ImageIcon join_img2 = new ImageIcon("src/main/resources/static/img/회원가입하기2.png");
 
@@ -31,51 +34,8 @@ public class Login extends JFrame
     //Lg : login 작성 칸
     //Pw : password 작성 칸
     //Ac : 계정이 없다면 회원 가입
-//    public class HintTextField extends JTextField
-//    {
-//        Font gainFont = new Font("아이디 입력",Font.PLAIN,15);
-//        Font lostFont = new Font("",Font.BOLD,15);
-//        public HintTextField(final String hint)
-//        {
-//            setText(hint);
-//            setFont(lostFont);
-//            setForeground(Color.GRAY);
-//            this.addFocusListener(new FocusAdapter()
-//            {
-//                @Override
-//                public void focusGained(FocusEvent e)
-//                {
-//                    if (getText().equals(hint))
-//                    {
-//                        setText("");
-//                        setFont(gainFont);
-//                    }
-//                    else
-//                    {
-//                        setText(getText());
-//                        setFont(gainFont);
-//                    }
-//                }
-//                @Override
-//
-//                public void focusLost(FocusEvent e)
-//                {
-//
-//                    if (getText().equals(hint) || getText().length() == 0)
-//                    {
-//                        setText(hint);
-//                        setFont(lostFont);
-//                        setForeground(Color.GRAY);
-//                    } else
-//                    {
-//                        setText(getText());
-//                        setFont(gainFont);
-//                        setForeground(Color.BLACK);
-//                    }
-//                }
-//            });
-//        }
-//    }
+
+
 
 
     public Login()
@@ -84,95 +44,96 @@ public class Login extends JFrame
         setTitle("Daily-Paper 로그인 화면");
         setLocation(180,50);
         setSize(1200,700);
-        //setLayout(null);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.white);
         //하루 한장 패널에 넣기
         panel1 = new JPanel();
-        panel1.setLayout(new FlowLayout());
+        panel1.setLayout(null);
         lP = new JLabel();
+        login = new JLabel();
         lP.setLayout(null);
         lP.setIcon(lP_img);
-        add(lP, BorderLayout.WEST);
+        password = new JLabel();
+        password.setIcon(password_img);
+        password.setBounds(668,257,50,50);
+        panel1.add(lP, BorderLayout.WEST);
+        lP.setBounds(0,0,600,700);
         //아이디 버튼 만들기
-        iD = new JButton(iD_img);
-        iD.setBounds(666,165,370,60);
-        iD.setBorderPainted(false);
-        iD.setFocusPainted(false);
-        iD.setVisible(true);
-        iD.setContentAreaFilled(false);
-        iD.setOpaque(true);
-        iD.setBackground(Color.white);
-        lP.add(iD);
-//        iD_text2 = new HintTextField("            아이디 혹은 이메일을 입력해주세요.");
-
-//        iD_text2.setBounds(720,135,220,19);
-//        iD_text2.setBackground(new Color(0,0,0,0));
-//        iD_text2.setBorder(new EmptyBorder(0,0,0,0));
-//        iD.add(iD_text2);
-
+        login = new JLabel("아이디 혹은 이메일을 입력해주세요.");
+        login.setIcon(login_img);
+        login.setForeground(Color.lightGray);
+        login.setBounds(676,169,500,30);
+        lP.add(login);
+        //아이디 텍스트 필드로 작성하는 칸 만들기
+        iD_text = new JTextField();
+        iD_text.setBounds(676,204,350,40);
+        lP.add(iD_text);
         //비밀번호 버튼 만들기
-        pW = new JButton(pW_img);
-        pW.setBounds(666,237,370,60);
-        pW.setBorderPainted(false);
-        pW.setFocusPainted(false);
-        pW.setContentAreaFilled(false);
-        pW.setOpaque(true);
-        pW.setBackground(Color.white);
-//        pW_text2 = new HintTextField("            비밀번호를 입력해주세요.");
-//        pW_text2.setBounds(720,135,220,19);
-//        pW_text2.setBackground(new Color(0,0,0,0));
-//        pW_text2.setBorder(new EmptyBorder(0,0,0,0));
-//        pW.add(pW_text2);
-        add(lP);
-        setVisible(true);
+        password = new JLabel("비밀번호를 입력해주세요.");
+        password.setIcon(password_img);
+        password.setForeground(Color.lightGray);
+        password.setBounds(676,248,500,30);
+        lP.add(password);
+        //비밀번호 텍스트 필드로 작성하는 칸 만들기
+        pW_text = new JPasswordField();
+        pW_text.setEchoChar('*');
+        pW_text.setBounds(676,282,350,40);
+        lP.add(pW_text);
+        //show password
+        pw_check = new JCheckBox("확인",password_check);
+        pw_check.setBorderPainted(false);
+        pw_check.setSelectedIcon(password_check2);
+        pw_check.setOpaque(true);
+        pw_check.setBackground(Color.white);
+        pw_check.setBounds(1033,286,30,30);
+        lP.add(pw_check);
+
+        //pw_check 클릭 시 password 보이기
+        pw_check.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (pw_check.isSelected())
+                {
+                    pW_text.setEchoChar((char) 0);
+                }
+                else
+                {
+                    pW_text.setEchoChar('*');
+                }
+            }
+        });
         //로그인 버튼 만들기
         lG = new JButton();
         lG.setIcon(lG_img);
         lG.setRolloverIcon(lG_img2);
         lG.setBorderPainted(false);
         lG.setFocusPainted(false);
-        lG.setBounds(666,322,370,60);
+        lG.setBounds(666,340,370,60);
         lG.setContentAreaFilled(false);
         lG.setOpaque(true);
         lG.setBackground(Color.white);
         // 계정이 없다면?
-        aC = new JButton();
-        aC.setIcon(aC_img);
-        aC.setBorderPainted(false);
-        aC.setFocusPainted(false);
+        aC = new JLabel("—————               이미 계정이 있으신가요?               —————",JLabel.CENTER);
         aC.setBounds(666,407,370,35);
-        aC.setContentAreaFilled(false);
-        aC.setOpaque(true);
-        aC.setBackground(Color.white);
+        aC.setForeground(Color.lightGray);
         // 회원가입 창
         join = new JButton();
         join.setIcon(join_img);
         join.setBorderPainted(false);
         join.setFocusPainted(false);
-        join.setBounds(785,465,131,35);
+        join.setBounds(785,450,131,35);
         join.setContentAreaFilled(false);
         join.setOpaque(true);
         join.setBackground(Color.white);
         join.setRolloverIcon(join_img2);
-        //lP.add(iD);
-        lP.add(pW);
         lP.add(lG);
         lP.add(aC);
         lP.add(join);
         panel1.add(lP);
         add(lP);
-//        add(lP, BorderLayout.CENTER);
         setVisible(true);
-
-        lG.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                new Name();
-                setVisible(false);
-            }
-        });
+        //join을 누르면 membership 파일로 넘어가기
         join.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -181,9 +142,16 @@ public class Login extends JFrame
             }
         });
     }
-
+    //main
     public static void main(String[] args)
     {
-        new Login();
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run()
+            {
+                new Login();
+            }
+        });
     }
 }
+
