@@ -2,9 +2,11 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Name {
-    public static void main(String[] args) {
+public class  Name extends JFrame {
+public Name() {
         JFrame frame = new JFrame("이름 생성창");
         frame.setPreferredSize(new Dimension(1200,700));    // 폭과 넓이 적용
         frame.setLocation(180,50);      // 윈도우 창의 나타낼 위치
@@ -83,5 +85,16 @@ public class Name {
 
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Home1();
+                setVisible(false); // 창 안보이게 하기
+            }
+        });
+    }
+    public static void main(String args[]) {
+        new Name();
     }
 }

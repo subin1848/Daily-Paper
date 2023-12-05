@@ -29,7 +29,7 @@ public class Login extends JFrame
     {
         //JFrame 설정
         setTitle("Daily-Paper 로그인 화면");
-        setLocation(200,200);
+        setLocation(180,50);
         setSize(1200,700);
         //setLayout(null);
         setResizable(false);
