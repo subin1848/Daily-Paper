@@ -20,8 +20,8 @@ public class Login extends JFrame
     ImageIcon lP_img = new ImageIcon("src/main/resources/static/img/하루한장 배경.png");
     ImageIcon login_img = new ImageIcon("src/main/resources/static/img/perm_identity.png");
     ImageIcon password_img = new ImageIcon("src/main/resources/static/img/lock.png");
-    ImageIcon password_check = new ImageIcon("src/main/resources/static/img/visibility_off (1).png");
-    ImageIcon password_check2 = new ImageIcon("src/main/resources/static/img/visibility (1).png");
+    ImageIcon password_check = new ImageIcon("src/main/resources/static/img/visibility (1).png");
+    ImageIcon password_check2 = new ImageIcon("src/main/resources/static/img/visibility_off (1).png");
     //button
     ImageIcon lG_img = new ImageIcon("src/main/resources/static/img/Login.png");
     ImageIcon lG_img2 = new ImageIcon("src/main/resources/static/img/Login2.png");

@@ -18,7 +18,7 @@ public class Start extends JFrame
     public Start()
     {
         setTitle("Daily-Paper 시작 화면");
-        setLocation(200,200);
+        setLocation(180,50);
         setSize(1200,700);
         setVisible(true);
         setResizable(false);
