@@ -141,6 +141,13 @@ public class Login extends JFrame
                 setVisible(false);
             }
         });
+        lG.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new Home1();
+                setVisible(false);
+            }
+        });
     }
     //main
     public static void main(String[] args)

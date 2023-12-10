@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static com.sun.org.apache.xerces.internal.util.DOMUtil.setVisible;
+//import static com.sun.org.apache.xerces.internal.util.DOMUtil.setVisible;
 
 public class  Search extends JFrame {
     public Search() {
@@ -22,7 +22,7 @@ public class  Search extends JFrame {
             frame.getContentPane().setBackground(Color.white);     // 창 색상 변경
 
             // 아이콘 생성
-            ImageIcon icon1 = new ImageIcon("src/main/resources/static/img/Group 45.png");
+            ImageIcon icon1 = new ImageIcon("src/main/resources/static/img/Group 64 (4).png");
             ImageIcon icon2 = new ImageIcon("src/main/resources/static/img/Group 46.png");
             ImageIcon icon3 = new ImageIcon("src/main/resources/static/img/Group 47.png");
 
@@ -132,6 +132,13 @@ public class  Search extends JFrame {
                     new Home1();
                     setVisible(false); // 창 안보이게 하기
                 }
+            });
+            b3.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent actionEvent) {
+                            new MyAccount();
+                            setVisible(false);
+                    }
             });
 
 

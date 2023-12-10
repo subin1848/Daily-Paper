@@ -2,6 +2,8 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MyAccount extends JFrame
 {
@@ -12,7 +14,7 @@ public class MyAccount extends JFrame
     ImageIcon sB_img = new ImageIcon("src/main/resources/static/img/Group 64 (4).png");
 
     ImageIcon hB_img = new ImageIcon("src/main/resources/static/img/Group 46.png");
-    ImageIcon aB_img = new ImageIcon("src/main/resources/static/img/Group 56.png");
+    ImageIcon aB_img = new ImageIcon("src/main/resources/static/img/Group 47.png");
     ImageIcon profile_img = new ImageIcon("src/main/resources/static/img/계정 프로필.png");
     ImageIcon name_img = new ImageIcon("src/main/resources/static/img/name.png");
     ImageIcon follow_img = new ImageIcon("src/main/resources/static/img/follow.png");
@@ -100,7 +102,23 @@ public class MyAccount extends JFrame
         mP3.add(mP2);
         mP3.add(mP1);
         add(mP3);
+
+        sB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Search();
+                setVisible(false); // 창 안보이게 하기
+            }
+        });
+        hB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Home1();
+                setVisible(false); // 창 안보이게 하기
+            }
+        });
     }
+
     public static void main(String[] args)
     {
         new MyAccount();
