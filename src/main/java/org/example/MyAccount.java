@@ -8,18 +8,20 @@ import java.awt.event.ActionListener;
 public class MyAccount extends JFrame
 {
     JPanel mP1, mP2, mP3;
-    JLabel profile, name, follow, heart, watch, heart_txt, watch_txt;
-    JButton sB, hB, aB;
+    JLabel profile, name, follow, watch, watch2, watch_txt, heart, heart2, heart_txt;
+    JButton sB, hB, aB, pB;
     //sB == search, hB == home, aB == account
     ImageIcon sB_img = new ImageIcon("src/main/resources/static/img/Group 64 (4).png");
-
     ImageIcon hB_img = new ImageIcon("src/main/resources/static/img/Group 46.png");
     ImageIcon aB_img = new ImageIcon("src/main/resources/static/img/Group 47.png");
+    ImageIcon pB_img = new ImageIcon("src/main/resources/static/img/일기장.png");
     ImageIcon profile_img = new ImageIcon("src/main/resources/static/img/계정 프로필.png");
     ImageIcon name_img = new ImageIcon("src/main/resources/static/img/name.png");
     ImageIcon follow_img = new ImageIcon("src/main/resources/static/img/follow.png");
     ImageIcon heart_img = new ImageIcon("src/main/resources/static/img/Group 54.png");
-    ImageIcon watch_img = new ImageIcon("src/main/resources/static/img/Group 51.png");
+    ImageIcon heart2_img = new ImageIcon("src/main/resources/static/img/좋아요한 게시물 칸.png");
+    ImageIcon watch_img = new ImageIcon("src/main/resources/static/img/Group 51 (1).png");
+    ImageIcon watch2_img = new ImageIcon("src/main/resources/static/img/Group 68 (1).png");
     public MyAccount()
     {
         setTitle("Account 창");
@@ -62,15 +64,27 @@ public class MyAccount extends JFrame
         follow = new JLabel(follow_img);
         follow.setBounds(274,107,204,26);
         add(follow);
-        //최근 본 게시물
-        watch_txt = new JLabel("최근 본 게시물");
+        //나의 게시물
+        watch_txt = new JLabel("나의 게시물");
         Font font = new Font("League Spartan",Font.BOLD, 15);
         watch_txt.setFont(font);
-        watch_txt.setBounds(194,248,115,17);
+        watch_txt.setBounds(180,250,108,17);
         watch = new JLabel(watch_img);
-        watch.setBounds(125,236,215,42);
+        watch.setBounds(120,236,170,45);
         add(watch);
         add(watch_txt);
+        //나의 게시물 틀
+        watch2 = new JLabel(watch2_img);
+        watch2.setBounds(125,298,448,166);
+        add(watch2);
+        //게시물
+        pB = new JButton(pB_img);
+        pB.setBorderPainted(false);
+        pB.setFocusPainted(false);
+        pB.setBounds(145,307,109,148);
+        pB.setContentAreaFilled(false);
+        pB.setOpaque(true);
+        add(pB);
         //좋아요한 게시물
         heart_txt = new JLabel("좋아요한 게시물");
         Font font2 = new Font("League Spartan",Font.BOLD, 15);
@@ -80,6 +94,10 @@ public class MyAccount extends JFrame
         heart.setBounds(724,71,215,42);
         add(heart);
         add(heart_txt);
+        //좋아요한 게시물 틀
+        heart2 = new JLabel(heart2_img);
+        heart2.setBounds(724,150,416,372);
+        add(heart2);
         //menu
         mP1 = new JPanel();
         mP1.setBackground(color1);
@@ -111,6 +129,13 @@ public class MyAccount extends JFrame
             }
         });
         hB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Home1();
+                setVisible(false); // 창 안보이게 하기
+            }
+        });
+        pB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Home1();
